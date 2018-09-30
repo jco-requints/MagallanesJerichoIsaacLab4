@@ -1,6 +1,5 @@
 package com.magallanes.jerichoisaac;
 
-import android.app.Activity;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,15 +30,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("4IT-H", "onPause() has executed...");
-    }
-
-    @Override
     protected void onStop() {
         super.onStop();
         Log.d("4IT-H", "onStop() has executed...");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("4IT-H","onDestroy() has executed...");
     }
 
     @Override
@@ -49,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("4IT-H", "onDestroy() has executed...");
+    protected void onPause() {
+        super.onPause();
+        Log.d("4IT-H", "onPause() has executed...");
     }
 
     public void toastMsg(View v) {
-        Toast.makeText(this, "Hello 4ITH", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Back button is clicked", Toast.LENGTH_LONG).show();
     }
 
     public void SnackbarMsg(View v){
-        Snackbar.make(v, "Hello again...",Snackbar.LENGTH_LONG).show();
+        Snackbar.make(v, "Next button is clicked",Snackbar.LENGTH_LONG).show();
     }
 }
